@@ -1,0 +1,107 @@
+.board{
+    display: grid;
+    justify-content: center;
+    grid-template-columns: repeat(3,auto);
+    justify-items: center;
+    margin-top: 2rem;
+}
+
+.cell{
+    width:100px;
+    height:100px;
+    border: 1px solid black;
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    position: relative;
+    cursor: pointer;
+    font-family: 'Courier New', Courier, monospace;
+    font-size:60px;
+}
+
+.div-control{
+    display: flex;
+    margin-top: 50px;
+    justify-content: center;
+}
+
+.cell:nth-child(3n+1){
+    border-left: none;
+}
+.cell:nth-child(3n+3){
+    border-right:none;
+}
+.cell:nth-child(1),
+.cell:nth-child(2),
+.cell:nth-child(3){
+    border-top:none;
+}
+
+.cell:nth-child(7),
+.cell:nth-child(8),
+.cell:nth-child(9){
+    border-bottom:none;
+}
+.restart-btn:hover:enabled{
+    background-color: white;
+    color: black;
+    
+} 
+.start-btn:hover:enabled{
+    background-color: white;
+    color: black;
+    
+}
+#changes-btn:hover{
+    background-color: white;
+    color: black;
+}
+/* 
+the below method will create 2 selectors to the selected cell before and  after*
+
+::before -  this selector will insert some stuff before the sellected content (here it is the cell x)
+
+.cell.x::before,
+.cell.x:after{
+    content:'';
+    width: 15%;
+    height: 90%;
+    background-color: black;
+    /* this will make the contents added be at their absolute position with respect top the div element cell
+    
+    In simple words: the div element becomes its world
+
+    position: absolute;
+}
+
+.cell.x::before{
+    transform: rotate(45deg);
+}
+
+.cell.x::after{
+    transform: rotate(-45deg);
+}
+
+.cell.circle::before,
+.cell.circle::after{
+    content:"";
+    when some position is absolute the element is removed from normal flow and placed using a seperate flow.
+    position: absolute;
+    border-radius: 50%;
+}
+
+.cell.circle::before{
+    width:90%;
+    height:90%;
+    background-color: black;
+}
+.cell.circle::after{
+    width: 70%;
+    height: 70%;
+    background-color: white;
+}
+
+.cell.x,
+.cell.circle{
+    cursor: not-allowed;
+} */
